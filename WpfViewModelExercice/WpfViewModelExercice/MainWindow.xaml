@@ -1,0 +1,101 @@
+﻿<Window x:Class="WpfViewModelExercice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:WpfViewModelExercice"       
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Background="LightBlue">
+    <Grid  Name="Ctrl_Grd_View"
+           Background="{Binding MainBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Name ="Ctrl_Tbk_Atxt"
+                    Text="A : "
+                    TextAlignment="Right"
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Width="100" 
+                    Height="25"/>
+        <TextBox Text="{Binding DataA, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" 
+                 Background= "{Binding NotificationColorA}"
+                 Name="Ctrl_Tbx_A"
+                 TextAlignment="Left"
+                 Grid.Row="0" 
+                 Grid.Column="1" 
+                 Width="100" 
+                 Height="25">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseEnter" >
+                    <i:InvokeCommandAction Command="{Binding MouseEnterTbxACommand}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MousseLeave" >
+                    <i:InvokeCommandAction Command="{Binding MouseLeaveTbxCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <!--MouseEnter="{Binding MouseEnterTbxACommand}"  MouseLeave="{Binding MouseLeaveTbxCommand}"-->
+        <TextBlock Name ="Ctrl_Tbk_Btxt"
+                    Text="B : "
+                    TextAlignment="Right"
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    Width="100" 
+                    Height="25"/>
+        <TextBox Text ="{Binding DataB, UpdateSourceTrigger=PropertyChanged,FallbackValue=0}" 
+                 Background= "{Binding NotificationColorB, FallbackValue='White'}"
+                 Name="Ctrl_Tbx_B" 
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 TextAlignment="Left"
+                 Width="100" 
+                 Height="25">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseEnter" >
+                    <i:InvokeCommandAction Command="{Binding MouseEnterTbxBCommand}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MousseLeave" >
+                    <i:InvokeCommandAction Command="{Binding MouseLeaveTbxCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <!--MouseEnter="{Binding MouseEnterTbxBCommand}" MouseLeave="{Binding MouseLeaveTbxCommand}"-->
+        <TextBlock Name ="Ctrl_Tbk_Ctxt"
+                    Text="C : "
+                    TextAlignment="Right"
+                    Grid.Row="0" 
+                    Grid.Column="2" 
+                    Width="100" 
+                    Height="25"/>
+        <TextBlock Text="{Binding DataC, FallbackValue=0}" 
+                   Name="Ctrl_Tbk_C" 
+                   Grid.Row="0" 
+                   Grid.Column="3" 
+                   TextAlignment="Left"
+                   Width="100" 
+                   Height="25"/>
+        <TextBlock Name ="Ctrl_Tbk_Dtxt"
+                    Text="D : "
+                    TextAlignment="Right"
+                    Grid.Row="1" 
+                    Grid.Column="2" 
+                    Width="100" 
+                    Height="25"/>
+        <TextBlock Text="{Binding DataD, FallbackValue=0}" 
+                   Name="Ctrl_Tbk_D" 
+                   Grid.Row="1" 
+                   Grid.Column="3" 
+                   TextAlignment="Left"
+                   Width="100" 
+                   Height="25"/>
+    </Grid>
+</Window>
