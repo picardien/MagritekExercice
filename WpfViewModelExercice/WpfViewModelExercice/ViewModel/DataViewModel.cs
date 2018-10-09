@@ -18,7 +18,7 @@ namespace WpfViewModelExercice.ViewModel
         private DataModel Data = new DataModel();
 
         /// <summary>
-        /// Command
+        /// Commands
         /// </summary>
         private ICommand _mouseEnterTbxACommand;
         private ICommand _mouseEnterTbxBCommand;
@@ -100,9 +100,6 @@ namespace WpfViewModelExercice.ViewModel
             MouseEnterTbxBCommand = new RelayCommand(ChangeBackGroundLGreen);
             MouseLeaveTbxCommand = new RelayCommand(ChangeBackGroundLGray);
         }
-
-
-
 
         /// <summary>
         /// Text value of Ctrl_Tbx_A

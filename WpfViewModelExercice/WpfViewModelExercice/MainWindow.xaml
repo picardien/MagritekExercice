@@ -38,7 +38,7 @@
                 <i:EventTrigger EventName="MouseEnter" >
                     <i:InvokeCommandAction Command="{Binding MouseEnterTbxACommand}" />
                 </i:EventTrigger>
-                <i:EventTrigger EventName="MousseLeave" >
+                <i:EventTrigger EventName="MouseLeave" >
                     <i:InvokeCommandAction Command="{Binding MouseLeaveTbxCommand}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
@@ -63,7 +63,7 @@
                 <i:EventTrigger EventName="MouseEnter" >
                     <i:InvokeCommandAction Command="{Binding MouseEnterTbxBCommand}" />
                 </i:EventTrigger>
-                <i:EventTrigger EventName="MousseLeave" >
+                <i:EventTrigger EventName="MouseLeave" >
                     <i:InvokeCommandAction Command="{Binding MouseLeaveTbxCommand}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
